@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useCSVReader } from "react-papaparse";
 import csv_img from "../assets/csv.png";
 
-const ReadCSV = ({ setEmails }) => {
+const ReadCSV = ({ handleSetEmails }) => {
   const { CSVReader } = useCSVReader();
   const [tempEmails, setTempEmails] = useState([]);
 
@@ -38,7 +38,7 @@ const ReadCSV = ({ setEmails }) => {
                   </div>
                   <Button
                     variant="contained"
-                    onClick={() => setEmails(tempEmails)}
+                    onClick={() => handleSetEmails(tempEmails)}
                   >
                     Import
                   </Button>
