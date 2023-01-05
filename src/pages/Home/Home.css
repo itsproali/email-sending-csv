@@ -1,0 +1,84 @@
+.home h1 {
+    text-align: center;
+    margin: 20px;
+    font-weight: 600;
+    font-size: 35px;
+}
+
+.home_container {
+    min-height: 80vh;
+    display: grid;
+    place-items: center;
+}
+
+.upload {
+    width: 75%;
+    padding: 50px;
+    background-color: rgb(230, 230, 230);
+    border: 2px dashed gray;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+.upload_btn {
+    all: unset;
+    font-size: 20px;
+    color: gray;
+    font-weight: semibold;
+    cursor: pointer;
+}
+
+.upload_btn:hover {
+    color: rgb(68, 68, 68)
+}
+
+.selected_file {
+    width: 80px;
+    height: 95px;
+    background-color: lightgray;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 7px;
+    position: relative;
+}
+
+.selected_file span {
+    font-size: 12px;
+}
+
+.selected_file img {
+    width: 40px;
+}
+
+.remove_btn {
+    all: unset;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    background-color: darkred;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.remove_icon {
+    transform: scale(75%);
+}
+
+@media only screen and (max-width: 750px) {
+    .upload {
+        width: 95%;
+    }
+}
