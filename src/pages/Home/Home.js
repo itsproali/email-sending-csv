@@ -1,16 +1,17 @@
 import { onAuthStateChanged } from "firebase/auth";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Loading from "../../components/Loading";
 import ReadCSV from "../../components/ReadCSV";
 import auth from "../../utils/firebase.config";
 import "./Home.css";
 import SendEmail from "../../components/SendEmail";
+import { EmailContext } from "../../App";
 
 const Home = () => {
+  const { emails, dispatch } = useContext(EmailContext);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  const [emails, setEmails] = useState([]);
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -25,15 +26,7 @@ const Home = () => {
 
   const handleSetEmails = (data) => {
     setLoading(true);
-    data.splice(0, 1);
-    let arr = [];
-    let index = 1;
-    for (const item of data) {
-      const newItem = { id: index, email: item[0] };
-      arr.push(newItem);
-      index++;
-    }
-    setEmails(arr);
+    dispatch({ type: "SET_EMAILS", payload: data });
     setLoading(false);
   };
 
@@ -48,7 +41,7 @@ const Home = () => {
         {emails.length === 0 ? (
           <ReadCSV handleSetEmails={handleSetEmails} />
         ) : (
-          <SendEmail emails={emails} />
+          <SendEmail />
         )}
       </div>
     </section>
