@@ -1,6 +1,13 @@
+.home_heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    padding: 0 8%;
+}
+
 .home h1 {
     text-align: center;
-    margin: 20px;
     font-weight: 600;
     font-size: 35px;
 }
@@ -78,6 +85,10 @@
 }
 
 @media only screen and (max-width: 750px) {
+    .home_heading {
+        padding: 0 3%;
+    }
+
     .upload {
         width: 95%;
     }

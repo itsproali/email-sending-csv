@@ -39,7 +39,8 @@ const Login = () => {
     <section className="login_container">
       <div>
         <div className="login_left">
-          <h2>Social Login Buttons</h2>
+          <h2>Login to Continue with us.!</h2>
+          <a href="https://github.com/itsproali/email-sending-csv#readme" target="_blank" rel="noopener noreferrer">See Documentation</a>
         </div>
         <div className="login_right">
           <button className="login_btn facebook_login">
